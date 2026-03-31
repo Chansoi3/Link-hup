@@ -5,8 +5,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>รวมลิ้งค์ทำงาน Topsdaily</title>
 
-    <link rel="apple-touch-icon" href="icon.png"> 
-  <link rel="icon" type="image/png" href="icon.png">
+    <link rel="icon" type="image/jpeg" href="icon.jpg"> 
+    
+    <link rel="apple-touch-icon" sizes="180x180" href="icon.jpg"> 
     
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="default">
@@ -40,20 +41,37 @@
             margin-bottom: 40px;
         }
 
+        /* ปรับขนาดหัวข้อให้เล็กลง และใส่สีสันวิ้งวับ */
         .header h1 {
-            color: var(--primary-color);
-            font-size: 2.5em;
+            font-size: 1.8em; 
             margin: 0;
             display: flex;
             align-items: center;
             gap: 10px;
             justify-content: center;
+            background: linear-gradient(270deg, #ff6b6b, #ff9999, #ffcc00, #ff6b6b);
+            background-size: 400% 400%;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            animation: gradientShine 3s ease infinite;
         }
 
-        .header p {
-            color: #666;
-            margin-top: 10px;
-            font-size: 1.1em;
+        /* แอนิเมชันสีวิ่งๆ (วิ้งวับ) */
+        @keyframes gradientShine {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+
+        /* แอนิเมชันขยับดุ๊กดิ๊กของไอคอนบนหัวข้อ */
+        .header-icon {
+            display: inline-block;
+            animation: bounce 2s infinite;
+        }
+
+        @keyframes bounce {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-8px) scale(1.1); }
         }
 
         .container {
@@ -120,14 +138,15 @@
         .card-5 .icon { background: #ffebee; }
         .card-6 .icon { background: #e0f7fa; }
         .card-7 .icon { background: #fff8e1; }
+        .card-8 .icon { background: #e8eaf6; } /* สีของการ์ดที่ 8 */
+        .card-9 .icon { background: #fce4ec; } /* สีของการ์ดที่ 9 */
 
     </style>
 </head>
 <body>
 
     <div class="header">
-        <h1>🛒 รวมลิ้งค์ทำงาน Topsdaily</h1>
-        <p>คลิกที่การ์ดเพื่อไปยังระบบที่ต้องการได้เลยครับ</p>
+        <h1><span class="header-icon">🛒</span> รวมลิ้งค์ทำงาน Topsdaily</h1>
     </div>
 
     <div class="container">
@@ -184,6 +203,22 @@
             <div class="details">
                 <span class="title">Training</span>
                 <span class="subtitle">ระบบการเรียนรู้และการฝึกอบรม</span>
+            </div>
+        </a>
+
+        <a href="https://cfgedi.tops.co.th/WPT_PROD/default.aspx" target="_blank" class="link-card card-8">
+            <div class="icon">🌐</div>
+            <div class="details">
+                <span class="title">CFG EDI</span>
+                <span class="subtitle">ระบบแลกเปลี่ยนข้อมูลอิเล็กทรอนิกส์</span>
+            </div>
+        </a>
+
+        <a href="https://performancemanager10.successfactors.com/sf/home?bplte_company=CENTRAL" target="_blank" class="link-card card-9">
+            <div class="icon">👥</div>
+            <div class="details">
+                <span class="title">Cnext</span>
+                <span class="subtitle">ระบบจัดการทรัพยากรบุคคล (HR)</span>
             </div>
         </a>
     </div>
